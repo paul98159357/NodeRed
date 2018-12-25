@@ -1,0 +1,107 @@
+[
+    {
+        "id": "b07fb99c.5c69b8",
+        "type": "tab",
+        "label": "Flow 6",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5f8bed38.20bb84",
+        "type": "inject",
+        "z": "b07fb99c.5c69b8",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 120,
+        "wires": [
+            [
+                "b85a8a99.501828"
+            ]
+        ]
+    },
+    {
+        "id": "b85a8a99.501828",
+        "type": "function",
+        "z": "b07fb99c.5c69b8",
+        "name": "Payload",
+        "func": "msg.headers={\n     deviceKey:\"Hb301UwyJSTAmnXt\"\n    };\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 300,
+        "y": 120,
+        "wires": [
+            [
+                "b6d0c7a8.3ada18",
+                "48754cf.8ece4b4"
+            ]
+        ]
+    },
+    {
+        "id": "b6d0c7a8.3ada18",
+        "type": "http request",
+        "z": "b07fb99c.5c69b8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://api.mediatek.com/mcs/v2/devices/DAMw1ajd/datachannels/Temperature/datapoints.csv",
+        "tls": "",
+        "x": 470,
+        "y": 120,
+        "wires": [
+            [
+                "cf3a169e.724168",
+                "9075726f.212bd"
+            ]
+        ]
+    },
+    {
+        "id": "cf3a169e.724168",
+        "type": "http response",
+        "z": "b07fb99c.5c69b8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 710,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "9075726f.212bd",
+        "type": "debug",
+        "z": "b07fb99c.5c69b8",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 730,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "48754cf.8ece4b4",
+        "type": "http request",
+        "z": "b07fb99c.5c69b8",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://api.mediatek.com/mcs/v2/devices/DAMw1ajd/datachannels/Humidity/datapoints.csv",
+        "tls": "",
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "cf3a169e.724168",
+                "9075726f.212bd"
+            ]
+        ]
+    }
+]
