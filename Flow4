@@ -1,0 +1,19 @@
+[
+    {
+        "id": "83dd3b4a.fdf098",
+        "type": "rpi-gpio in",
+        "z": "3baa84d8.8d8cac",
+        "name": "GPIO4",
+        "pin": "7",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "c52ba905.4a3cc8"
+            ]
+        ]
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "36c4fefe.790932",
+        "type": "function",
+        "z": "5ef5165c.0e0028",
+        "name": "Payload",
+        "func": "msg.headers={\n     deviceKey:\"Hb301UwyJSTAmnXt\"\n};\n\nmsg.payload=\"Temperature,,25.3\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "afbc44e0.db0a28"
+            ]
+        ]
+    }
+]
